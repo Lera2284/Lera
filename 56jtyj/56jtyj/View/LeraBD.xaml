@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="LeraBD" Height="450" Width="800">
     <Grid>
-        <ListBox ItemTemplate="{DynamicResource ExcelTemplate}" x:Name="OpenBD">
+        <ListBox ItemTemplate="{DynamicResource ExcelTemplate}" x:Name="OpenBD"
+                 Background="LightPink">
+            <!--ListBox представляет собой обычный список-->
             <ListBox.Resources>
                 <ResourceDictionary>
                     <DataTemplate x:Key="ExcelTemplate">
@@ -15,37 +17,53 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="700"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="700"/>
                             </Grid.ColumnDefinitions>
+            <!-- В данном случае, grid позволяет разделить панель на 3 части-->
                             <Border Margin="0">
                                 <TextBlock Text="{Binding Date}" TextWrapping="Wrap"
-                                         FontSize="15" FontWeight="Bold" Foreground="#071C71"/>
+                                           FontSize="15" Foreground="Black" 
+                                           FontFamily="Lucida Calligraphy"/>
                             </Border>
+            <!--Где и как будет выглядеть таблица БД (Дата бд)-->
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
+            <!--Вторая панель разделена на 2 ячейки-->
                                 <TextBlock Grid.Row="0"
                                           FontWeight="Bold"
                                           TextTrimming="WordEllipsis"
                                           Text="{Binding Name}"
-                                          FontSize="20"/>
+                                          FontSize="20" FontFamily="Elephant"/>
+            <!--Таблица Name помещена во вторую часть панели, в первую ячейку-->
                                 <TextBlock Grid.Row="1" Text="{Binding Title}"
                                           TextTrimming="WordEllipsis"
-                                          Foreground="#FFB300"
+                                          Foreground="#A0522D"
                                           TextWrapping="Wrap"
                                           FontSize="15"/>
                             </Grid>
+            <!--Таблица Title помещена во вторую часть панели, во вторую ячейку-->
+                            <TextBlock Grid.Column="2" Text="{Binding class}"
+                                          
+                                          Foreground="Black"
+                                          TextWrapping="Wrap"
+                                          FontSize="20"
+                                          FontFamily="Elephant" FontWeight="Bold"/>
+            <!--Таблица class помещена в третью часть панели-->
                         </Grid>
                     </DataTemplate>
                 </ResourceDictionary>
             </ListBox.Resources>
         </ListBox>
+             <!--Закрывающие теги-->
         
         <Button
-                Click="Button_Click" Name="BD" Content="Открыть бд" Width="100" Height="50" >
-        </Button>
+                Click="Button_Click" Name="BD" Content="Нажмите, чтобы показать базу данных" 
+                Width="260" Height="60" FontFamily="MV Boli"
+                FontWeight="Bold" />
+        <!--Кнопка, которая открывает БД-->
 
     </Grid>
 </Window>

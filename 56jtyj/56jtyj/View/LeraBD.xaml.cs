@@ -36,8 +36,10 @@ namespace _56jtyj.View
             MaslovEntities Lera = new MaslovEntities();
             Lera.Sheet1_.Load();
             OpenBD.ItemsSource = Lera.Sheet1_.Local.ToBindingList();
-            BD.Visibility = Visibility.Hidden;
+            BD.Visibility = Visibility.Hidden; 
+            
 
         }
+       
     }
 }

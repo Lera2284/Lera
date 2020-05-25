@@ -71,6 +71,11 @@
     <Compile Include="ModelDb\Sheet1_.cs">
       <DependentUpon>Model1Lera.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\LeraBD.xaml.cs">
       <DependentUpon>LeraBD.xaml</DependentUpon>
     </Compile>
@@ -127,6 +132,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="ModelDb\Model1Lera.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

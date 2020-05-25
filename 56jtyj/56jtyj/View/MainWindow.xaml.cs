@@ -44,7 +44,7 @@ namespace _56jtyj
                 .Where(u => u.Login == login && u.Password == password)
                 .FirstOrDefault();
             if (user == null)
-                MessageBox.Show("Неверно");
+                MessageBox.Show("Вы ввели неверный логин или пароль. Пожалуйста, повторите попытку");
             if (user != null)
             {
                 View.LeraBD window1 = new View.LeraBD();
@@ -66,6 +66,7 @@ namespace _56jtyj
             Lera.User.Add(user);
             MessageBox.Show("Успешно зарегистрировались");
             Lera.SaveChanges();
+           
         }
     }
 }
