@@ -1,0 +1,51 @@
+﻿<Window x:Class="_56jtyj.View.LeraBD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_56jtyj.View"
+        mc:Ignorable="d"
+        Title="LeraBD" Height="450" Width="800">
+    <Grid>
+        <ListBox ItemTemplate="{DynamicResource ExcelTemplate}" x:Name="OpenBD">
+            <ListBox.Resources>
+                <ResourceDictionary>
+                    <DataTemplate x:Key="ExcelTemplate">
+                        <Grid Height="100">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="700"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Margin="0">
+                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap"
+                                         FontSize="15" FontWeight="Bold" Foreground="#071C71"/>
+                            </Border>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0"
+                                          FontWeight="Bold"
+                                          TextTrimming="WordEllipsis"
+                                          Text="{Binding Name}"
+                                          FontSize="20"/>
+                                <TextBlock Grid.Row="1" Text="{Binding Title}"
+                                          TextTrimming="WordEllipsis"
+                                          Foreground="#FFB300"
+                                          TextWrapping="Wrap"
+                                          FontSize="15"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ResourceDictionary>
+            </ListBox.Resources>
+        </ListBox>
+        
+        <Button
+                Click="Button_Click" Name="BD" Content="Открыть бд" Width="100" Height="50" >
+        </Button>
+
+    </Grid>
+</Window>
